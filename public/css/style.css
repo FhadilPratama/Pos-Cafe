@@ -1,0 +1,770 @@
+/* body */
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display:wght@500&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Dancing Script', serif;
+    color: #4B3621;
+    position: relative;
+    /* overflow: hidden; */
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 110%;
+    /* diperbesar 10% */
+    height: 110%;
+    /* diperbesar 10% */
+    background-image: url(https://img.freepik.com/premium-photo/vintage-car-is-parked-front-vintage-cafe_902049-11993.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(3px);
+    transform: scale(1.1);
+    /* memperbesar sedikit */
+    z-index: -1;
+}
+
+/* auth */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.auth-box {
+    background-color: #FFF8DC;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.auth-box h2 {
+    text-align: center;
+    color: #6B4226;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #DEB887;
+    border-radius: 5px;
+}
+
+.submit-button {
+    background-color: #D2B48C;
+    color: #6B4226;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #C19A6B;
+}
+
+.alert {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.alert-success {
+    background-color: #D4EDDA;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #F8D7DA;
+    color: #721C24;
+}
+
+/* layouts */
+
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #F5DEB3;
+    padding: 20px;
+}
+
+.main {
+    flex-grow: 1;
+    padding: 20px;
+    padding-bottom: 100px;
+    /* Tambahkan ruang untuk footer */
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(5px);
+}
+
+.sidebar h1 {
+    font-family: 'Playfair Display', serif;
+    color: #6B4226;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px;
+    color: #6B4226;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.sidebar a:hover {
+    background-color: #DEB887;
+    border-radius: 5px;
+}
+
+/* Styling untuk Header */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #FFF8DC;
+    /* Latar belakang vintage */
+    border-bottom: 2px solid #DEB887;
+    /* Border lembut */
+    font-family: 'Playfair Display', serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Efek bayangan halus */
+    margin-bottom: 20px;
+    /* Menambahkan jarak antara header dan konten bawah */
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #6B4226;
+    /* Warna coklat vintage */
+    text-transform: uppercase;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1rem;
+    color: #6B4226;
+    /* Warna coklat vintage */
+}
+
+.user-name {
+    font-size: 1rem;
+}
+
+.logout-btn {
+    background-color: #6B4226;
+    /* Coklat vintage */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.875rem;
+    font-family: 'Dancing Script', cursive;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efek hover untuk tombol logout */
+.logout-btn:hover {
+    background-color: #8B5E3C;
+    /* Warna lebih terang saat hover */
+    transform: translateY(-3px);
+    /* Efek angkat saat hover */
+}
+
+.logout-btn:focus {
+    outline: none;
+}
+
+/* Responsif untuk ukuran layar lebih kecil */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .user-info {
+        gap: 10px;
+        margin-top: 10px;
+    }
+}
+
+/* dashboard */
+
+/* Dashboard container utama */
+.activity-list {
+    background-color: #FFFFFF;
+    /* putih bersih */
+    padding: 25px;
+    border-radius: 15px;
+    margin-top: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* font modern */
+}
+
+/* Judul activity list */
+.activity-list h2 {
+    color: #333333;
+    /* warna teks gelap */
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    border-bottom: 3px solid #D2B48C;
+    padding-bottom: 8px;
+}
+
+/* List item */
+.activity-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.activity-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #E0C097;
+    /* border halus */
+    font-size: 1rem;
+    color: #555555;
+    transition: background-color 0.3s ease;
+}
+
+.activity-list li:hover {
+    background-color: #FFF3E0;
+    /* highlight saat hover */
+}
+
+/* Styling untuk teks di list */
+.activity-list li span:first-child {
+    font-weight: 600;
+    color: #6B4226;
+}
+
+/* Container card statistik */
+.stats-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: flex-start;
+}
+
+/* Card statistik */
+.card-stat {
+    flex: 1 1 220px;
+    /* minimal lebar 220px, fleksibel */
+    background-color: #FAF5EF;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(210, 180, 140, 0.15);
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #5C3A21;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Hover effect untuk card */
+.card-stat:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(210, 180, 140, 0.3);
+}
+
+/* Judul dalam card */
+.card-stat h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+/* Nilai statistik */
+.card-stat p {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: 1.2px;
+}
+
+/* Responsif */
+/* Tablet */
+@media (max-width: 768px) {
+    .stats-row {
+        justify-content: center;
+    }
+
+    .card-stat {
+        flex: 1 1 45%;
+    }
+}
+
+/* HP */
+@media (max-width: 480px) {
+    .card-stat {
+        flex: 1 1 100%;
+    }
+}
+
+/* USERS MANAGEMENT */
+
+/* Tombol umum */
+.btn {
+    padding: 8px 16px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.btn-add {
+    background-color: #6B4226;
+    color: white;
+    text-decoration: none;
+}
+
+#qty-4 {
+    font-style: normal !important;
+}
+
+.btn-add:hover {
+    background-color: #8B5E3C;
+}
+
+.btn-edit {
+    background-color: #FFDAB9;
+    color: #5C3A21;
+    text-decoration: none;
+}
+
+.btn-edit:hover {
+    background-color: #FFDEAD;
+}
+
+.btn-delete {
+    background-color: #F8D7DA;
+    color: #721C24;
+    text-decoration: none;
+}
+
+.btn-delete:hover {
+    background-color: #F5C6CB;
+}
+
+/* Tabel data */
+.table-users {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #FFF8DC;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.table-users th,
+.table-users td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #DEB887;
+}
+
+.table-users th {
+    background-color: #F5DEB3;
+    color: #4B3621;
+    font-weight: bold;
+}
+
+.table-users tr:hover {
+    background-color: #FFF3E0;
+}
+
+/* Form user (create/edit) */
+.user-form {
+    background-color: #FFF8DC;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.user-form h2 {
+    font-size: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+    color: #6B4226;
+    text-align: center;
+}
+
+.user-form .form-group {
+    margin-bottom: 15px;
+}
+
+.user-form label {
+    display: block;
+    font-weight: bold;
+    color: #4B3621;
+    margin-bottom: 6px;
+}
+
+.user-form .form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #DEB887;
+    border-radius: 5px;
+}
+
+.user-form .form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.user-form .form-actions .btn {
+    width: 48%;
+}
+
+/* Tombol kembali */
+.back-button {
+    display: inline-block;
+    margin-top: 15px;
+    background-color: #D2B48C;
+    color: #4B3621;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #C19A6B;
+}
+
+/* Filter Form */
+form[method="GET"] {
+    background-color: #FFF8DC;
+    /* sama dengan main bg */
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #6B4226;
+}
+
+form[method="GET"] label {
+    font-weight: 600;
+    min-width: 120px;
+}
+
+form[method="GET"] select.form-input,
+form[method="GET"] input.form-input {
+    border: 1px solid #DEB887;
+    border-radius: 5px;
+    padding: 8px 10px;
+    font-family: inherit;
+    color: #4B3621;
+    transition: border-color 0.3s ease;
+    width: 160px;
+}
+
+form[method="GET"] input.form-input[type="text"] {
+    width: 220px;
+}
+
+form[method="GET"] select.form-input:focus,
+form[method="GET"] input.form-input:focus {
+    outline: none;
+    border-color: #C19A6B;
+    box-shadow: 0 0 6px #C19A6B;
+}
+
+form[method="GET"] button.submit-button {
+    background-color: #6B4226;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Segoe UI', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+form[method="GET"] button.submit-button:hover {
+    background-color: #8B5E3C;
+}
+
+/* Responsive Filter Form */
+@media (max-width: 600px) {
+    form[method="GET"] {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    form[method="GET"] label,
+    form[method="GET"] select.form-input,
+    form[method="GET"] input.form-input,
+    form[method="GET"] button.submit-button {
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+/* Table - sudah ada .table-users di style.css */
+/* Tambahan styling untuk gambar agar konsisten */
+.table-users td img {
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Jika mau kasih padding di cell aksi */
+.table-users td:last-child {
+    white-space: nowrap;
+    gap: 8px;
+}
+
+.card-menu {
+    width: 220px;
+    height: 320px;
+    /* ✅ Tambahkan tinggi tetap */
+    flex-shrink: 0;
+    background-color: #FFF8DC;
+    border: 1px solid #E0C097;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    /* ✅ Hindari melar */
+}
+
+.menu-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    flex-shrink: 0;
+}
+
+.menu-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #6B4226;
+    flex-shrink: 0;
+}
+
+.menu-price {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #8B5E3C;
+    flex-shrink: 0;
+}
+
+.menu-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.menu-actions button,
+.menu-actions span {
+    min-width: 30px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+
+footer {
+    margin: 0 !important;
+    position: absolute !important;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Untuk halaman detail transaksi */
+.transaction-detail .page-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #6B4226;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #D2B48C;
+    padding-bottom: 8px;
+}
+
+.transaction-card {
+    background-color: #FFF8DC;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(210, 180, 140, 0.2);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #4B3621;
+    line-height: 1.5;
+}
+
+.transaction-card p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+.transaction-card .status {
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 15px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* Status warna berbeda sesuai tipe */
+.status.pending {
+    background-color: #F9E79F;
+    color: #7D6608;
+}
+
+.status.completed {
+    background-color: #ABEBC6;
+    color: #1D8348;
+}
+
+.status.cancelled {
+    background-color: #F5B7B1;
+    color: #78281F;
+}
+
+/* Judul section */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #6B4226;
+    border-bottom: 2px solid #D2B48C;
+    padding-bottom: 6px;
+}
+
+/* Table khusus transaksi */
+.transaction-table {
+    margin-top: 15px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Styling tombol kembali */
+.btn-back {
+    background-color: #D2B48C;
+    color: #4B3621;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.btn-back:hover {
+    background-color: #C19A6B;
+}
+
+/* Responsive kecil */
+@media (max-width: 600px) {
+    .transaction-detail .page-title {
+        font-size: 1.6rem;
+    }
+
+    .transaction-card p {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+    font-family: Arial, sans-serif;
+}
+
+.pagination a {
+    padding: 8px 15px;
+    border: 1px solid #007bff;
+    color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.pagination a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.pagination .disabled {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    color: #aaa;
+    border-radius: 5px;
+}
+
+.submit-button {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #3490dc;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.submit-button:hover {
+    background-color: #2779bd;
+}
